@@ -1,0 +1,57 @@
+/* ===========================================================================
+   Aquarelle — base element styles & helpers
+   Light-touch resets that make raw HTML look on-brand out of the box.
+   ===========================================================================*/
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-body);
+  background-color: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text-strong);
+  font-weight: var(--w-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+
+p { margin: 0 0 1em; text-wrap: pretty; }
+
+a { color: var(--brand-ink); text-decoration-color: color-mix(in oklab, var(--brand) 40%, transparent); text-underline-offset: 2px; }
+a:hover { color: var(--brand); }
+
+::selection { background: var(--rose-200); color: var(--ink-900); }
+
+:focus-visible {
+  outline: var(--ring-width) solid var(--ring-brand);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* ---- Reusable brand helpers --------------------------------------------- */
+
+.aq-bloom-text {
+  background: var(--bloom);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.aq-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}

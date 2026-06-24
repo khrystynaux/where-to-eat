@@ -1,0 +1,106 @@
+/* ===========================================================================
+   Aquarelle — Color tokens
+   A warm watercolor palette: pigment that blooms from magenta through coral
+   into amber and sunlit yellow, laid on soft paper.
+   ===========================================================================*/
+
+:root {
+  /* ---- Paper & ink (neutrals, warmed) ------------------------------------ */
+  --paper-0:   #ffffff;          /* pure white highlight              */
+  --paper-50:  #fdf9f5;          /* default page — warm cotton paper  */
+  --paper-100: #f9f0e9;          /* raised surface / wash             */
+  --paper-200: #f2e4da;          /* hairline tint, hover wash         */
+  --paper-300: #e7d4c8;          /* borders on paper                  */
+
+  --ink-900:   #2a1f24;          /* primary text — warm plum-black    */
+  --ink-700:   #5a4a51;          /* secondary text                    */
+  --ink-500:   #8a767d;          /* muted text, captions              */
+  --ink-300:   #b9a8ae;          /* disabled, placeholder             */
+
+  /* ---- Pigment scale: Rose (primary) ------------------------------------- */
+  --rose-50:   #fdeaf2;
+  --rose-100:  #fbd0e0;
+  --rose-200:  #f6a6c4;
+  --rose-300:  #f072a3;
+  --rose-400:  #e84588;
+  --rose-500:  #e21e78;          /* PRIMARY — signature watercolor magenta */
+  --rose-600:  #c2155f;
+  --rose-700:  #9b1149;
+
+  /* ---- Pigment scale: Coral ---------------------------------------------- */
+  --coral-100: #fde0d5;
+  --coral-300: #f7a487;
+  --coral-500: #f26a4b;          /* warm coral                        */
+  --coral-600: #d8512f;
+
+  /* ---- Pigment scale: Amber ---------------------------------------------- */
+  --amber-100: #fdeccc;
+  --amber-300: #f9c062;
+  --amber-500: #f6953b;          /* orange-amber                      */
+  --amber-600: #db7415;
+
+  /* ---- Pigment scale: Sun (yellow) --------------------------------------- */
+  --sun-100:   #fef3c8;
+  --sun-300:   #fcdf6a;
+  --sun-500:   #fbd230;          /* sunlit yellow — the bloom's edge  */
+  --sun-600:   #e3b40a;
+
+  /* ---- Pigment scale: Lilac (the paper the splash sits on) ---------------- */
+  --lilac-100: #f6edf6;
+  --lilac-300: #e3cbe6;
+  --lilac-500: #c79bce;
+
+  /* ---- Cool support (sparing, for status only) --------------------------- */
+  --sage-500:  #3f9d7c;          /* success — muted watercolor green  */
+  --sage-100:  #d8efe5;
+
+  /* =========================================================================
+     Semantic aliases — reference these in components, not the raw scales
+     =========================================================================*/
+
+  /* Brand */
+  --brand:            var(--rose-500);
+  --brand-strong:     var(--rose-600);
+  --brand-soft:       var(--rose-50);
+  --brand-ink:        var(--rose-700);
+
+  /* The signature warm bloom — magenta → coral → amber → sun */
+  --bloom:            linear-gradient(105deg,
+                        var(--rose-500) 0%,
+                        var(--coral-500) 42%,
+                        var(--amber-500) 72%,
+                        var(--sun-500) 100%);
+  --bloom-soft:       linear-gradient(105deg,
+                        var(--rose-100) 0%,
+                        var(--coral-100) 50%,
+                        var(--sun-100) 100%);
+
+  /* Surfaces */
+  --surface-page:     var(--paper-50);
+  --surface-card:     var(--paper-0);
+  --surface-raised:   var(--paper-100);
+  --surface-sunk:     var(--paper-200);
+  --surface-wash:     var(--lilac-100);
+
+  /* Text */
+  --text-strong:      var(--ink-900);
+  --text-body:        var(--ink-700);
+  --text-muted:       var(--ink-500);
+  --text-faint:       var(--ink-300);
+  --text-on-bloom:    #ffffff;
+  --text-on-brand:    #ffffff;
+
+  /* Lines & edges */
+  --border-soft:      var(--paper-200);
+  --border:           var(--paper-300);
+  --border-strong:    var(--ink-300);
+  --ring-brand:       color-mix(in oklab, var(--rose-500) 38%, transparent);
+
+  /* Status */
+  --success:          var(--sage-500);
+  --success-soft:     var(--sage-100);
+  --warning:          var(--amber-600);
+  --warning-soft:     var(--amber-100);
+  --danger:           var(--rose-600);
+  --danger-soft:      var(--rose-50);
+}
