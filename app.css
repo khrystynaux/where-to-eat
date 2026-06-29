@@ -585,3 +585,54 @@ button { font-family: inherit; }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .001ms !important; }
 }
+
+/* ============================================================================
+   MOBILE-NATIVE MODE (< 768px)
+   Hide the phone frame and render the app directly in the viewport.
+   The frame is shown only on tablet / desktop where it makes visual sense.
+   ============================================================================*/
+@media (max-width: 767px) {
+  /* stage becomes a plain full-screen container — no gallery wall */
+  .stage {
+    display: block;
+    background: var(--surface-page, #fffdf7);
+  }
+  .stage::before { display: none; }
+
+  /* scale wrapper must not apply any transform */
+  .stage__scale { transform: none !important; }
+
+  /* strip the phone frame */
+  .device {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  /* screen fills the real viewport */
+  .device__screen {
+    border-radius: 0;
+    height: 100dvh;
+  }
+
+  /* hide simulated phone chrome */
+  .device__island,
+  .statusbar,
+  .homebar { display: none; }
+
+  /* replace fixed 64px status-bar gap with real safe-area inset */
+  .pad {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 24px);
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 24px);
+  }
+  .pad--game {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 20px);
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 20px);
+  }
+
+  /* toast clear of the home indicator */
+  .toast { bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); }
+}

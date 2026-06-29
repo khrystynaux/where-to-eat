@@ -438,10 +438,12 @@ function App() {
 function fitScale() {
   const el = document.getElementById("scale");
   if (!el) return;
-  const pad = 24;
   const vp = window.visualViewport;
   const vw = vp ? vp.width  : window.innerWidth;
   const vh = vp ? vp.height : window.innerHeight;
+  // On real mobile screens the frame is hidden — no scaling needed
+  if (vw < 768) { el.style.transform = "none"; return; }
+  const pad = 24;
   const s = Math.min((vw - pad) / 390, (vh - pad) / 844, 1.18);
   el.style.transform = "scale(" + s + ")";
 }
