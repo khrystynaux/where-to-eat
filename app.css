@@ -4,7 +4,7 @@
    ============================================================================*/
 
 * { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; }
+html, body { margin: 0; height: 100%; min-height: -webkit-fill-available; }
 
 /* ---- Three-font system -------------------------------------------------- */
 /* Catamaran = big titles · Poppins = section headers · Maven Pro = body */
@@ -26,6 +26,7 @@ button { font-family: inherit; }
 /* ---- Stage: warm gallery wall behind the device ------------------------- */
 .stage {
   position: fixed; inset: 0; overflow: hidden;
+  height: 100dvh;
   display: grid; place-items: center;
   background:
     radial-gradient(120% 90% at 20% 0%, #f7eef0 0%, rgba(247,238,240,0) 55%),

@@ -439,10 +439,18 @@ function fitScale() {
   const el = document.getElementById("scale");
   if (!el) return;
   const pad = 24;
-  const s = Math.min((window.innerWidth - pad) / 390, (window.innerHeight - pad) / 844, 1.18);
+  const vp = window.visualViewport;
+  const vw = vp ? vp.width  : window.innerWidth;
+  const vh = vp ? vp.height : window.innerHeight;
+  const s = Math.min((vw - pad) / 390, (vh - pad) / 844, 1.18);
   el.style.transform = "scale(" + s + ")";
 }
 window.addEventListener("resize", fitScale);
+window.addEventListener("orientationchange", () => setTimeout(fitScale, 300));
+if (window.visualViewport) {
+  window.visualViewport.addEventListener("resize", fitScale);
+}
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 setTimeout(fitScale, 60);
+setTimeout(fitScale, 600);
