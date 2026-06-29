@@ -21,7 +21,7 @@ body {
   background: #efe6dd;
 }
 img { display: block; max-width: 100%; }
-button { font-family: inherit; }
+button { font-family: inherit; color: inherit; }
 
 /* ---- Stage: warm gallery wall behind the device ------------------------- */
 .stage {
