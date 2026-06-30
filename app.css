@@ -138,7 +138,7 @@ button { font-family: inherit; color: inherit; }
 .aqBtn.u-block { width: 100%; }
 .gchip.aqTag {
   position: relative; overflow: visible;
-  font-size: 14px; padding: 10px 15px; border-radius: var(--radius-pill);
+  font-size: 16px; padding: 10px 15px; border-radius: var(--radius-pill);
   border: 1.5px solid var(--border) !important;
   background: var(--surface-card) !important;
   color: var(--text-body) !important;
@@ -186,7 +186,7 @@ button { font-family: inherit; color: inherit; }
 /* ---- Chips / tags ------------------------------------------------------- */
 .chips { display: flex; flex-wrap: wrap; gap: 9px; }
 /* DS Tag, sized up for comfortable mobile tapping */
-.aqTag.gchip { border-radius: var(--radius-pill); padding: 0.6em 1em; font-size: 14px;
+.aqTag.gchip { border-radius: var(--radius-pill); padding: 0.6em 1em; font-size: 16px;
   font-weight: 700; }
 /* full-width DS buttons */
 .aqBtn.u-block { width: 100%; }
@@ -267,7 +267,7 @@ button { font-family: inherit; color: inherit; }
 .budget__signs .off { color: var(--text-faint); }
 .budget__signs .on { color: var(--brand); }
 .budget.is-on .budget__signs .on { color: var(--brand-strong); }
-.budget__label { font-size: 12px; color: var(--text-muted); font-weight: 700; }
+.budget__label { font-size: 16px; color: var(--text-muted); font-weight: 700; }
 
 /* ---- Preferences wizard ------------------------------------------------- */
 .wprogress { display: flex; gap: 6px; margin-bottom: 22px; }
