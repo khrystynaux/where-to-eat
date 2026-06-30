@@ -93,7 +93,10 @@ button { font-family: inherit; color: inherit; }
 .screen::-webkit-scrollbar { width: 0; height: 0; }
 
 .pad { padding: 64px 26px 30px; }      /* clears status bar */
-.pad--game { padding: 60px 18px 22px; }
+.pad--game {
+  padding: 60px 18px 22px;
+  display: flex; flex-direction: column; justify-content: center; min-height: 100%;
+}
 
 /* watercolor food motif (uses the uploaded reference paintings) */
 .motif {
@@ -493,14 +496,14 @@ button { font-family: inherit; color: inherit; }
    Game screen — café scene bleeding up from the bottom
    ========================================================================= */
 .gamescene {
-  position: absolute; left: 0; right: 0; bottom: 0; z-index: 0;
-  height: 53%; pointer-events: none;
-  background: url('assets/cafe-scene.png') center top / cover no-repeat;
-  opacity: .62;
-  -webkit-mask-image: linear-gradient(to top,
-    #000 0%, rgba(0,0,0,.92) 30%, rgba(0,0,0,.55) 62%, rgba(0,0,0,0) 100%);
-          mask-image: linear-gradient(to top,
-    #000 0%, rgba(0,0,0,.92) 30%, rgba(0,0,0,.55) 62%, rgba(0,0,0,0) 100%);
+  position: absolute; inset: 0; z-index: 0;
+  pointer-events: none;
+  background: url('assets/cafe-scene.png') center center / cover no-repeat;
+  opacity: .68;
+  -webkit-mask-image: linear-gradient(to bottom,
+    rgba(0,0,0,.5) 0%, rgba(0,0,0,.8) 35%, #000 65%);
+          mask-image: linear-gradient(to bottom,
+    rgba(0,0,0,.5) 0%, rgba(0,0,0,.8) 35%, #000 65%);
 }
 
 /* =========================================================================
@@ -631,10 +634,6 @@ button { font-family: inherit; color: inherit; }
   .pad--game {
     padding-top: calc(env(safe-area-inset-top, 0px) + 20px);
     padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 20px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100%;
   }
 
   /* loader label: ditch the 96px phone-frame padding, use real safe area */
