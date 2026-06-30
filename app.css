@@ -111,7 +111,7 @@ button { font-family: inherit; color: inherit; }
 /* ---- Typography helpers ------------------------------------------------- */
 .eyebrow {
   font-family: var(--font-mono); text-transform: uppercase;
-  letter-spacing: var(--tracking-caps); font-size: 11px;
+  letter-spacing: var(--tracking-caps); font-size: 12px;
   color: var(--brand-ink); font-weight: 700;
 }
 .eyebrow--muted { color: var(--text-muted); }
@@ -337,13 +337,13 @@ button { font-family: inherit; color: inherit; }
   position: absolute; top: 9px; right: 9px; z-index: 2;
   background: rgba(42,31,36,.62); color: #fff; backdrop-filter: blur(4px);
   border-radius: var(--radius-pill); padding: 4px 9px; font-weight: 700;
-  font-size: 11px; display: flex; align-items: center; gap: 3px;
+  font-size: 12px; display: flex; align-items: center; gap: 3px;
 }
 
 .rcard__body { padding: 11px 5px 0; }
 .rcard__cuisine {
-  font-family: var(--font-mono); text-transform: uppercase; font-size: 9.5px;
-  letter-spacing: .14em; color: var(--brand-ink); font-weight: 700;
+  font-family: var(--font-mono); text-transform: uppercase; font-size: 12px;
+  letter-spacing: .10em; color: var(--brand-ink); font-weight: 700;
 }
 .rcard__name {
   font-family: var(--font-head); font-weight: 600; font-size: 18px;
@@ -356,7 +356,7 @@ button { font-family: inherit; color: inherit; }
 .stars { display: inline-flex; gap: 1px; color: var(--amber-500); }
 .stars svg { width: 13px; height: 13px; }
 .rating-num { font-size: 12px; font-weight: 800; color: var(--text-strong); }
-.review-num { font-size: 11px; color: var(--text-faint); font-weight: 600; }
+.review-num { font-size: 12px; color: var(--text-faint); font-weight: 600; }
 
 /* card style variants (tweak) */
 .rcard--polaroid { padding: 10px 10px 16px; border-radius: var(--radius-md);
@@ -388,7 +388,7 @@ button { font-family: inherit; color: inherit; }
 .gamehead { position: relative; z-index: 2; text-align: center; }
 .roundpill {
   display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono);
-  font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
   color: var(--brand-ink); font-weight: 700; background: var(--brand-soft);
   border-radius: var(--radius-pill); padding: 6px 14px;
 }
@@ -554,7 +554,7 @@ button { font-family: inherit; color: inherit; }
   box-shadow: var(--shadow-xs); }
 .stat__v { font-family: var(--font-head); font-weight: 600; font-size: 19px;
   color: var(--text-strong); }
-.stat__k { font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+.stat__k { font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
   color: var(--text-muted); font-weight: 700; margin-top: 1px; }
 .reveal__actions { width: 100%; margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
 
@@ -631,7 +631,20 @@ button { font-family: inherit; color: inherit; }
   .pad--game {
     padding-top: calc(env(safe-area-inset-top, 0px) + 20px);
     padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 20px);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
   }
+  /* push restaurant cards toward the thumb zone */
+  .pad--game .arena { margin-top: auto; }
+
+  /* loader label: ditch the 96px phone-frame padding, use real safe area */
+  .loader__label {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 24px);
+  }
+
+  /* ensure any sub-viewport gap matches the app background */
+  html { background: var(--surface-page, #fffdf7); }
 
   /* toast clear of the home indicator */
   .toast { bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); }
